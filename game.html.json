@@ -1,0 +1,49 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Love Game 💕</title>
+<style>
+body{
+  height:100vh;
+    background:pink;
+      font-family:Poppins,sans-serif;
+        text-align:center;
+          overflow:hidden;
+          }
+          h1{color:white;}
+          .heart{position:absolute;font-size:40px;cursor:pointer;}
+          </style>
+          </head>
+
+          <body>
+          <h1>Catch the Hearts 💖</h1>
+          <p>Score: <span id="score">0</span></p>
+
+          <script>
+          const params=new URLSearchParams(window.location.search);
+          const name=params.get("Panduu")||"My Love";
+          let score=0;
+
+          function spawn(){
+            const h=document.createElement("div");
+              h.className="heart";
+                h.innerHTML="❤️";
+                  h.style.left=Math.random()*window.innerWidth+"px";
+                    h.style.top=Math.random()*window.innerHeight+"px";
+                      h.onclick=()=>{
+                          score++;
+                              scoreSpan.innerText=score;
+                                  h.remove();
+                                      if(score===5){
+                                            window.location.href=`proposal.html?name=${Panduu}`;
+                                                }
+                                                  };
+                                                    document.body.appendChild(h);
+                                                      setTimeout(()=>h.remove(),2000);
+                                                      }
+                                                      setInterval(spawn,800);
+                                                      </script>
+                                                      </body>
+                                                      </html>
+                                                      ```

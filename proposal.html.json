@@ -1,0 +1,35 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forever 💍</title>
+<style>
+body{
+  height:100vh;
+    background:linear-gradient(#ff758c,#ff7eb3);
+      display:flex;
+        justify-content:center;
+          align-items:center;
+            text-align:center;
+              color:white;
+                font-family:Poppins,sans-serif;
+                }
+                h1{font-size:3rem;}
+                </style>
+                </head>
+
+                <body>
+                <div>
+                  <h1 id="Love u cutuu"></h1>
+                    <p style="font-size:1.4rem;">💑🥰🐻‍❣️💖</p>
+                      <p>You are my today, tomorrow & always ❤️</p>
+                        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="180">
+                        </div>
+
+                        <script>
+                        const params=new URLSearchParams(window.location.search);
+                        const name=params.get("cutie pie")||"My Love";
+                        finalText.innerText=`Will you be mine forever, ${Bubaa}? 💍❤️`;
+                        </script>
+                        </body>
+                        </html>

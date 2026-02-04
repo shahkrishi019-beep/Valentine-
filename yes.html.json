@@ -1,0 +1,147 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Valentine ❤️</title>
+
+<style>
+body{
+  margin:0;
+    min-height:100vh;
+      background:linear-gradient(#fbc2eb,#a6c1ee);
+        font-family:Poppins,sans-serif;
+          text-align:center;
+            color:white;
+              overflow:hidden;
+              }
+              h1{margin-top:25px;font-size:3rem;}
+              button{
+                padding:12px 26px;
+                  border:none;
+                    border-radius:25px;
+                      font-size:1rem;
+                        background:#ff4d6d;
+                          color:white;
+                            cursor:pointer;
+                              margin:8px;
+                              }
+
+                              /* Slider */
+                              .slider{width:220px;margin:20px auto;}
+                              .slider img{width:100%;border-radius:20px;display:none;}
+                              .slider img.active{display:block;}
+
+                              /* Popup */
+                              .popup{
+                                display:none;
+                                  position:fixed;
+                                    inset:0;
+                                      background:rgba(0,0,0,0.6);
+                                      }
+                                      .popup-content{
+                                        background:white;
+                                          color:#ff4d6d;
+                                            width:300px;
+                                              margin:120px auto;
+                                                padding:20px;
+                                                  border-radius:20px;
+                                                  }
+
+                                                  /* Falling emojis */
+                                                  .fall{
+                                                    position:fixed;
+                                                      top:-20px;
+                                                        font-size:22px;
+                                                          animation:drop linear infinite;
+                                                          }
+                                                          @keyframes drop{
+                                                            to{transform:translateY(110vh);}
+                                                            }
+                                                            </style>
+                                                            </head>
+
+                                                            <body>
+
+                                                            <h1 id="loveText"></h1>
+                                                            <div style="font-size:2rem;">💑🥰🐻‍❣️🌸</div>
+                                                            <h3 id="countdown"></h3>
+
+                                                            <!-- PHOTO SLIDER -->
+                                                            <div class="slider">
+                                                              <img src="images/pic1.jpg" class="active">
+                                                                <img src="images/pic2.jpg">
+                                                                  <img src="images/pic3.jpg">
+                                                                  </div>
+
+                                                                  <!-- CUTE COUPLE GIF STICKERS -->
+                                                                  <div>
+                                                                    <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" width="110">
+                                                                      <img src="https://media.giphy.com/media/l0MYyDa8S9ghzNebm/giphy.gif" width="110">
+                                                                        <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" width="110">
+                                                                        </div>
+
+                                                                        <button onclick="openLetter()">Read My Love Letter 💌</button>
+                                                                        <button onclick="goGame()">Play Love Game 💕</button>
+
+                                                                        <!-- LOVE LETTER -->
+                                                                        <div class="popup" id="popup">
+                                                                          <div class="popup-content">
+                                                                              <h3>My Love 💖</h3>
+                                                                                  <p id="letterText"></p>
+                                                                                      <button onclick="closeLetter()">Close</button>
+                                                                                        </div>
+                                                                                        </div>
+
+                                                                                        <audio autoplay loop>
+                                                                                          <source src="music/love.mp3" type="audio/mpeg">
+                                                                                          </audio>
+
+                                                                                          <script>
+                                                                                          const params=new URLSearchParams(window.location.search);
+                                                                                          const name=params.get("Panduu")||"My Love";
+
+                                                                                          loveText.innerText=`Hehehe… I knew that, ${Panduuu} 😘❤️`;
+
+                                                                                          letterText.innerHTML=
+                                                                                          `Dear ${Panduu/Motuu} 🥺💖,<br><br>
+                                                                                          You make my heart smile every day 💑  
+                                                                                          Thank you for being my comfort, my happiness,
+                                                                                          and my forever Valentine 💕<br><br>
+                                                                                          🐻‍❣️🌸💋`;
+
+                                                                                          function openLetter(){popup.style.display="block";}
+                                                                                          function closeLetter(){popup.style.display="none";}
+                                                                                          function goGame(){window.location.href=`game.html?name=${bubuuu}`;}
+
+                                                                                          /* Slider */
+                                                                                          let slides=document.querySelectorAll(".slider img");
+                                                                                          let i=0;
+                                                                                          setInterval(()=>{
+                                                                                            slides[i].classList.remove("active");
+                                                                                              i=(i+1)%slides.length;
+                                                                                                slides[i].classList.add("active");
+                                                                                                },2000);
+
+                                                                                                /* Countdown */
+                                                                                                const target=new Date("Feb 14, 2026 00:00:00").getTime();
+                                                                                                setInterval(()=>{
+                                                                                                  const d=Math.floor((target-Date.now())/(1000*60*60*24));
+                                                                                                    countdown.innerText=d>0?`Our day in ${d} days 💖`:"It's our day 😍";
+                                                                                                    },1000);
+
+                                                                                                    /* Heart + couple sticker rain */
+                                                                                                    const emojis=["❤️","💑","🥰","🐻‍❣️","🌸"];
+                                                                                                    setInterval(()=>{
+                                                                                                      const e=document.createElement("div");
+                                                                                                        e.className="fall";
+                                                                                                          e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+                                                                                                            e.style.left=Math.random()*100+"vw";
+                                                                                                              e.style.animationDuration=(3+Math.random()*3)+"s";
+                                                                                                                document.body.appendChild(e);
+                                                                                                                  setTimeout(()=>e.remove(),5000);
+                                                                                                                  },400);
+                                                                                                                  </script>
+
+                                                                                                                  </body>
+                                                                                                                  </html>

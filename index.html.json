@@ -1,0 +1,57 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Valentine 💘</title>
+<style>
+body{
+  height:100vh;
+    display:flex;
+      justify-content:center;
+        align-items:center;
+          background:linear-gradient(#ff758c,#ff7eb3);
+            font-family:Poppins,sans-serif;
+              overflow:hidden;
+              }
+              .container{text-align:center;}
+              h1{color:white;font-size:2.5rem;}
+              button{
+                padding:12px 30px;
+                  font-size:1.2rem;
+                    border:none;
+                      border-radius:30px;
+                        cursor:pointer;
+                          margin:10px;
+                          }
+                          #yes{background:#ff4d6d;color:white;}
+                          #no{background:white;color:#ff4d6d;position:absolute;}
+                          </style>
+                          </head>
+
+                          <body>
+                          <div class="container">
+                            <h1 id="valText"></h1>
+                              <button id="yes" onclick="goYes()">Yes 😍</button>
+                                <button id="no">No 🙄</button>
+                                </div>
+
+                                <script>
+                                const params=new URLSearchParams(window.location.search);
+                                const name=params.get("Panduuu")||"Motu";
+
+                                document.getElementById("valText").innerText=
+                                `Will you be my Valentine, ${Panduuu🐼}? 💖`;
+
+                                const noBtn=document.getElementById("no");
+                                noBtn.addEventListener("mouseover",()=>{
+                                  noBtn.style.left=Math.random()*(window.innerWidth-100)+"px";
+                                    noBtn.style.top=Math.random()*(window.innerHeight-50)+"px";
+                                    });
+
+                                    function goYes(){
+                                      window.location.href=`yes.html?name=${Panduu/Motuu😘}`;
+                                      }
+                                      </script>
+                                      </body>
+                                      </html>
